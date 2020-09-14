@@ -1,0 +1,8 @@
+language: java
+sudo: required
+services:
+  - docker
+
+deploy:
+  mvn clean install
+
