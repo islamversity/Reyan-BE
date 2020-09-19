@@ -1,0 +1,17 @@
+
+version: "3"
+services:
+  mymongodb:
+    image: mongo:latest
+    container_name: "mymongodb"
+    ports:
+      - 27017:27017
+
+  reyan-api:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - MONGO_HOST=mymongodb
+    links:
+      - mymongodb
