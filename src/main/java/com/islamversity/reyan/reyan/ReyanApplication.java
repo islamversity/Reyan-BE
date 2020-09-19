@@ -39,7 +39,7 @@ public class ReyanApplication {
                 List<SurahDTO> surahDTOS = mapper.readValue(inputStream, typeReference);
                 Optional<Surah> hamd = surahRepository.findSurahByIndex(HAMD_INDEX);
                 if (hamd.isPresent()){
-                    log.info(""+ hamd);
+                    log.info("DB found.");
                     return;
                 }
                     surahDTOS.stream()
