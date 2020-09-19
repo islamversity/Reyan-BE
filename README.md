@@ -1,6 +1,6 @@
 Reyan
 ==========
-under construction ...
+Reyan-BE is an open source project providing advances search features for holy Quran.
 
 Prerequisites
 ==========
