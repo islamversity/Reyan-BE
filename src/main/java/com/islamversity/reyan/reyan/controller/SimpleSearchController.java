@@ -1,11 +1,13 @@
 package com.islamversity.reyan.reyan.controller;
 
+import com.islamversity.reyan.reyan.model.AyeDTO;
 import com.islamversity.reyan.reyan.model.SurahDTO;
 import com.islamversity.reyan.reyan.service.SimpleSearchService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,6 +23,12 @@ public class SimpleSearchController {
     @GetMapping("/allsurahs")
     ResponseEntity<List<String>> allSurahsList() {
         return ResponseEntity.ok(simpleSearchService.findAllSurahsNames());
+
+    }
+
+    @GetMapping("/findAyehsBySurah/{surahName}")
+    ResponseEntity<List<AyeDTO>> findAyehsBySureh(@PathVariable("surahName") String surahName){
+        return ResponseEntity.ok(simpleSearchService.findAyehsBySurahName(surahName));
 
     }
 
