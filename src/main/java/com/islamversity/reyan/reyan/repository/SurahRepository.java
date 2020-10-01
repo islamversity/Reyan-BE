@@ -10,4 +10,5 @@ import java.util.Optional;
 public interface SurahRepository extends CrudRepository<Surah, Integer> {
     Optional<Surah> findSurahByIndex(Integer index);
     Optional<Surah> findSurahByName(String name);
+    long count();
 }
