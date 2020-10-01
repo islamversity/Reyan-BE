@@ -1,0 +1,27 @@
+[
+  {
+    "id": "1",
+    "languageName": "Persian",
+    "abbreviation": "fa"
+  },
+  {
+    "id": "2",
+    "languageName": "English",
+    "abbreviation": "en"
+  },
+  {
+    "id": "3",
+    "languageName": "Arabic",
+    "abbreviation": "ar"
+  },
+  {
+    "id": "4",
+    "languageName": "Urdu",
+    "abbreviation": "ur"
+  },
+  {
+    "id": "5",
+    "languageName": "Turkish",
+    "abbreviation": "tu"
+  }
+]

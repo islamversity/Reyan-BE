@@ -1,20 +1,22 @@
 package com.islamversity.reyan.reyan.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-/*@Document
+@Document
 @Data
 @Builder
-public class Recite {
+@AllArgsConstructor
+@NoArgsConstructor
+public class Language {
     @Id
-    String index;
+    Integer id;
 
-    Integer version;
+    String languageName;
 
-    String local;
-
-    String ayeIndex;
-}*/
+    String abbreviation;
+}
