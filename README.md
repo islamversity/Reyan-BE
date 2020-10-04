@@ -8,7 +8,13 @@ You need to install docker in case you are using macOs or Windows.
 
 How to use
 ==========
-run  <<docker-compose up>>
+server:
+
+docker-compose run -p 8080:8080 -v /var/lib/reyan-files:/mnt/reyan-files  reyan-api
+
+macos:
+
+docker-compose run -p 8080:8080 -v /Users/Shared/reyan-files:/mnt/reyan-files  reyan-api  
 
 REST ENDPOINTS
 ==========

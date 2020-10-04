@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,12 +25,13 @@ public class ReciteServiceImpl implements ReciteService {
     public byte[] getAyeRecite(Integer languageId, String surehId, String ayeId) {
         byte[] buffer = null;
         String local = getLocal(languageId);
-        String recite = "/sounds/" + local + "/" + surehId + ayeId + ".mp3";
+        String recite = "/mnt/reyan-files/sounds/" + local + "/" + surehId + ayeId + ".mp3";
         log.info("recite: {} ", recite);
 
-        InputStream inputStream = TypeReference.class.getResourceAsStream(recite);
         try {
+            InputStream inputStream = new FileInputStream(recite);
             if (inputStream == null) {
+                log.error("inputStream is null.");
                 throw new NotFoundException();
             }
             buffer = new byte[inputStream.available()];
