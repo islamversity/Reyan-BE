@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 public class Reciter {
     @Id
-    String id;
+    Integer id;
 
     String name;
 
