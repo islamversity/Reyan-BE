@@ -35,4 +35,19 @@ public class ReciteController {
 
     }
 
+    @RequestMapping(value = "/page/{reciterId}/{pageNumber}", method = GET)
+    public void playAudio(@PathVariable("reciterId") Integer reciterId, @PathVariable("pageNumber") String pageNumber,
+                          HttpServletRequest request, HttpServletResponse response) {
+
+        try {
+            log.info("Playing page {}", pageNumber);
+            byte[] buffer = reciteService.getPage(reciterId, pageNumber);
+            response.setContentType("audio");
+            response.getOutputStream().write(buffer);
+        } catch (IOException e) {
+            log.error("Error while finding recite for reciter:{}, page{}", reciterId, pageNumber, e);
+        }
+
+    }
+
 }
