@@ -1,5 +1,13 @@
 version: "3"
 services:
+  myelastic:
+    image: hojatvb/my-elasticsearch-1:reyan1
+    command: tail -F anything
+    container_name: "myelastic"
+    ports:
+      - "9200:9200"
+      - "5601:5601"
+
   mymongodb:
     image: mongo:latest
     container_name: "mymongodb"

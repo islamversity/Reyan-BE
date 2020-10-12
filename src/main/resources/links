@@ -1,0 +1,15 @@
+Good To Read:
+
+https://docs.spring.io/spring-data/elasticsearch/docs/current/reference/html/#reference
+https://medium.com/@sourav.pati09/how-to-use-java-high-level-rest-client-with-spring-boot-to-talk-to-aws-elasticsearch-2b6106f2e2c
+https://sundog-education.com/elasticsearch/
+https://hub.docker.com/_/kibana
+
+
+Commands:
+    *Setting up elasticsearch
+        *docker run -e "discovery.type=single-node" -p 9200:9200 f29a1ee41030   ==> -e changes elasticsearch.yml file
+
+    *Connecting to running elasticsearch : docker exec -it e2aada02b153 bash
+
+    *Getting a google drive file  using curl :  curl -L "https://drive.google.com/uc?id=1q-QeP7bAS-0I7S7q_m1TNdSsRPJLvGgw&export=download" > quran-1line.json
