@@ -8,14 +8,29 @@ You need to install docker in case you are using macOs or Windows.
 
 How to use
 ==========
-server:
+1- run the dockers : docker-compose run --build
 
-docker-compose run -p 8080:8080 -v /var/lib/reyan-files:/mnt/reyan-files  reyan-api
-
-macos:
-
-docker-compose run -p 8080:8080 -v /Users/Shared/reyan-files:/mnt/reyan-files  reyan-api  
+2- connect to elasticsearch docker and start elasticsearch service and kibana manually (to be fixed) : docker run exec -it <id> bash 
 
 REST ENDPOINTS
 ==========
-Getting list of all surahs names ==> http://localhost:8080/api/allsurahs
+1- Surahs:
+
+* Getting list of all surahs names ==> GET http://localhost:8080/api/allsurahs
+* Getting list of Ayehs for a surah ==> GET http://localhost:8080/api/findAyehsBySurah/{surahName}
+* Getting list of Ayehs for a surah ==> GET http://localhost:8080/api/findAyehsBySurah/{surahName}
+
+2- Configs
+
+* Adding new config ==> POST http://localhost:8080/api/config  
+* Getting list of all configs ==> GET http://localhost:8080/api/config/allconfigs
+
+3- Recites
+
+* Playing recite of an Ayeh for a language: GET http://localhost:8080/api/recite/{languageId}/{surehId}/{ayeId} 
+* Playing recite of a page with a given reciter sound: GET http://localhost:8080/api/recite/page/{reciterId}/{pageNumber}
+
+ 3- Elasticsearch
+ 
+* @Deprecated Preparing index input file: GET http://localhost:8080/api/es/createIndexBulk 
+
