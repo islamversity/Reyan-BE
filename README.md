@@ -8,7 +8,10 @@ You need to install docker in case you are using macOs or Windows.
 
 How to use
 ==========
-1- run the dockers : docker-compose run --build
+1- run the dockers : 
+```Shell
+docker container kill reyan-api && docker container rm  reyan-api && docker-compose run -d -p 8080:8080 -v /var/lib/reyan-files:/mnt/reyan-files  reyan-api && docker container rename reyan-be_reyan-api_run_1 reyan-api
+```
 
 2- connect to elasticsearch docker and start elasticsearch service and kibana manually (to be fixed) : docker run exec -it <id> bash 
 

@@ -7,6 +7,8 @@ services:
     ports:
       - "9200:9200"
       - "5601:5601"
+    networks:
+      - default
 
   mymongodb:
     image: mongo:latest
@@ -15,8 +17,11 @@ services:
       - 27017:27017
     volumes:
       - /var/lib/reyan-files/mongo/data:/data/db
+    networks:
+      - default
 
   reyan-api:
+    hostname: reyan-app
     build: .
     ports:
       - "8080:8080"
@@ -26,3 +31,11 @@ services:
       - /var/lib/reyan-files:/mnt/reyan-files
     depends_on:
       - mymongodb
+    networks:
+      - default
+      - nginx_web-server
+
+networks:
+  nginx_web-server:
+    external:
+      name: web-server-network
